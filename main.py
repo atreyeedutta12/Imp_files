@@ -6,7 +6,11 @@ from flask_cors import CORS
 app = Flask('app')
 # added as WIX not working
 CORS(app) 
-
+# added as WIX not working
+@app.route('/')
+def index():
+    return "CORS is enabled for all!"
+            
 @app.route('/test', methods=['GET'])
 def test():
     return 'Pinging Model Application!!'
